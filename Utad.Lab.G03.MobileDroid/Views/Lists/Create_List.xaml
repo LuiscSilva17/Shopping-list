@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Utad.Lab.G03.MobileDroid.Views.Create_List"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:Utad.Lab.G03.MobileDroid.Controls"
+    xmlns:behaviours="clr-namespace:Utad.Lab.G03.MobileDroid.Behaviors"
+    xmlns:converter="clr-namespace:Utad.Lab.G03.MobileDroid.Converters"
+    xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+    xmlns:ViewModel="clr-namespace:Utad.Lab.G03.MobileDroid.ViewModels" 
+    xmlns:behaviour="clr-namespace:Utad.Lab.G03.MobileDroid.Behaviors"
+    BackgroundColor="{DynamicResource Gray-Bg}"
+    NavigationPage.HasNavigationBar="False"
+    x:Name="AddProfile">
+
+    <ContentPage.BindingContext>
+        <ViewModel:Create_ListViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:NameValidationConverter x:Key="FirstValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout x:Name="titleLayout" Spacing="0">
+                <control:TitleView Title="New List" BackgroundColor="{DynamicResource Backgroudgray}">
+                    <control:TitleView.LeadingView>
+                        <!--  Back button command  -->
+                        <buttons:SfButton x:Name="backButton" Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference AddProfile}}" 
+                                          Text="{StaticResource Back}" CommandParameter="{x:Reference backButton}" 
+                                          Style="{StaticResource IconButtonStyle}" 
+                                          Clicked="Btn_Back"/>
+
+                    </control:TitleView.LeadingView>
+                </control:TitleView>
+                <ContentPresenter />
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="16" Spacing="16">
+                
+
+
+
+                <StackLayout>
+                <!--  First name entry with border  -->
+                    <border:SfBorder 
+                               Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start" 
+                               BorderColor="{StaticResource Gray-900}" CornerRadius="20">
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <Entry  
+                               x:Name="NameEntry"
+                               Placeholder="List Name"
+                               Text=""/>
+                        </Grid>
+                    </border:SfBorder>
+                </StackLayout>
+                    
+                            <!--  <control:BorderlessEntry
+                        x:Name="FirstNameEntry"
+                        Placeholder="List Name"
+                        Style="{StaticResource BorderlessEntryStyle}" 
+                        Text="{Binding FirstName.Value}">
+                                <Entry.Behaviors>
+                                    <behaviour:EntryLineValidationBehaviour IsValid="{Binding FirstName.IsValid}"/>
+                                </Entry.Behaviors>
+                            </control:BorderlessEntry>
+                            -->
+                            <!--  Label to display error icon  -->
+                           <!-- <Label Grid.Column="1" Style="{StaticResource ErrorIconLabelStyle}" Margin="0"
+                                   IsVisible="{Binding Path=IsVisible, Source={x:Reference FirstNameValidationLabel}}"
+                                   Text="{StaticResource Error}"/> -->
+                      
+
+                    <!--  Label to display error message  -->
+                    <!--<Label x:Name="FirstNameValidationLabel" Margin="15,-3,0,0" VerticalOptions="FillAndExpand"
+                           Text="{Binding FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                           IsVisible="{Binding FirstName.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                           Style="{StaticResource SimpleLabelStyle}" TextColor="{DynamicResource Red}"/> -->
+               
+
+               
+
+
+                <buttons:SfButton
+                    Margin="0,16,0,0"
+                    Style="{StaticResource ButtonStyle3}"
+                    Text="Create List"
+                    WidthRequest="200" 
+                    Command="{Binding AddContactCommand}"
+                    Clicked="Btn_Create"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Utad.Lab.G03.MobileDroid.Views.Product"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Utad.Lab.G03.MobileDroid.Behaviors"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:Utad.Lab.G03.MobileDroid.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:effectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="{DynamicResource Gray-Bg}"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+
+    <ContentPage.Content>
+
+        <Grid
+            ColumnSpacing="0"
+            RowDefinitions="Auto, Auto, Auto, *"
+            RowSpacing="0">
+
+            <StackLayout
+                x:Name="TitleView"
+                Grid.Row="0"
+                Padding="8"
+                BackgroundColor="{DynamicResource Backgroudgray}"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                Spacing="0"
+                >
+
+                <StackLayout
+                    x:Name="TitleLayout"
+                    HorizontalOptions="FillAndExpand"
+                    IsVisible="True"
+                    Orientation="Horizontal"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand">
+
+                    <!--  Back button command  -->
+                    <buttons:SfButton
+                        x:Name="backButton"
+                        Command="{Binding BackButtonCommand}"
+                        CommandParameter="{x:Reference backButton}"
+                        Style="{StaticResource IconButtonStyle}"
+                        Text="{StaticResource Back}"
+                        Clicked="Btn_Back"/>
+
+                    <!--  File explorer list page Title  -->
+                    <Label
+                        Margin="16,0"
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="FillAndExpand"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Products"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+
+                </StackLayout>
+
+                <StackLayout
+                    x:Name="Search"
+                    HorizontalOptions="EndAndExpand"
+                    IsVisible="False"
+                    Orientation="Horizontal"
+                    Spacing="0">
+
+                    <!--  Back to title layout  -->
+                    <buttons:SfButton
+                        x:Name="BackToTitle"
+                        Style="{StaticResource IconButtonStyle}"
+                        Text="{StaticResource Back}">
+                        <buttons:SfButton.Behaviors>
+                            <behaviors:SearchBarAnimationBehavior AnimationType="shrink" />
+                        </buttons:SfButton.Behaviors>
+                    </buttons:SfButton>
+
+                    <!--  Rounded Search Entry BindingContext="{x:Reference FileExploreList}" -->
+                    <border:SfBorder Style="{DynamicResource ThemeBorderStyle}">
+                        <controls:BorderlessEntry
+                            x:Name="SearchEntry"   
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Search here"
+                            Style="{StaticResource BorderlessEntryStyle}"
+                            Text="{Binding SearchText, Mode=TwoWay}" />
+                    </border:SfBorder>
+                </StackLayout>
+
+                <!--  Search Button  -->
+                <buttons:SfButton
+                    x:Name="SearchButton"
+                    IsVisible="True"
+                    Style="{StaticResource IconButtonStyle}"
+                    Text="{StaticResource Search}">
+                    <buttons:SfButton.Behaviors>
+                        <behaviors:SearchBarAnimationBehavior AnimationType="expand" />
+                    </buttons:SfButton.Behaviors>
+                </buttons:SfButton>
+
+            </StackLayout>
+
+            <!--  Seperator  -->
+            <BoxView Grid.Row="1" Style="{StaticResource HorizontalSeparatorStyle}" />
+
+            <Grid
+                Grid.Row="2"
+                ColumnSpacing="0"
+                HeightRequest="48"
+                RowSpacing="0">
+
+                <Label
+                    Margin="16,0"
+                    FontFamily="Montserrat-SemiBold"
+                    FontSize="16"
+                    HorizontalOptions="Start"
+                    LineHeight="{OnPlatform Android=1.5,
+                                            Default=-1}"
+                    Text="Create Product"
+                    TextColor="{DynamicResource Gray-900}"
+                    VerticalOptions="Center" />
+
+                <buttons:SfButton
+                    Margin="15,0"
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    Command="{Binding CategoryCommand}"
+                    CornerRadius="4"
+                    FontSize="20"
+                    HorizontalOptions="End"
+                    Style="{StaticResource IconButtonStyle}"
+                    Text="{StaticResource Add}"
+                    Clicked="Btn_Create"/>
+
+            </Grid>
+            
+            <!--- ListView das Listas dos produtos >.......................... -->
+            <ListView Grid.Row="3"
+                      ItemsSource="{Binding DBLProducts}"
+                      ItemTapped="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="15, 0, 0, 0"
+                                 ColumnDefinitions="Auto, Auto"
+                                 ColumnSpacing="0"
+                                 RowDefinitions="Auto, Auto, Auto"
+                                 RowSpacing="0"
+                                 Grid.Row="3">
+    
+                                <!--  Folder Name  -->
+                                <Label
+                                  
+                                 Grid.Column="1"
+                                Margin="0,13,0,0"
+                                FontFamily="Montserrat-Medium"
+                                FontSize="16"     
+                                HorizontalOptions="Start"
+                                Text="{Binding Nome}"
+                                TextColor="{DynamicResource Gray-900}"/>
+
+                               <!-- Next Button   Clicked="Btn_Edit" -->
+                                <buttons:SfButton 
+                                Margin="15,0"
+                                Grid.Column="2"                  
+                                CornerRadius="4"
+                                FontSize="20"
+                                HorizontalOptions="End"
+                                IsEnabled="False"
+                                Style="{StaticResource IconButtonStyle}"
+                                Text="{StaticResource Add}"/>
+
+                                <!--  Seperator  
+                                <BoxView
+                                Grid.Row="2"
+                                Grid.ColumnSpan="2"
+                                Style="{StaticResource HorizontalSeparatorStyle}" /> -->
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

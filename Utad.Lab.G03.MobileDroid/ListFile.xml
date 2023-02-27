@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ListasCompras>
+	<Listas>
+		<Lista nome="Lista 1" id="1">
+			<Produtos>
+				<Produto nome="Pera Rocha" quantidade="10" categoria="Fruta" tipoUnidade="Kg" />
+				<Produto nome="Pão da casa" quantidade="6" categoria="Padaria" tipoUnidade="Kg" />
+				<Produto nome="Copos de água (20cl)" quantidade="12" categoria="Bazar" tipoUnidade="Unity" />
+				<Produto nome="Pão da casa" quantidade="6" categoria="Padaria" tipoUnidade="Kg" />
+				<Produto nome="Cola Tudo" quantidade="1" categoria="Ferragens" tipoUnidade="Unity" />
+				<Produto nome="Broa de Milho" quantidade="1" categoria="Padaria" tipoUnidade="Kg" />
+			</Produtos>
+		</Lista>
+		<Lista nome="AminhaLista" id="2">
+			<Produtos>
+				<Produto nome="Alface" quantidade="1" categoria="Mercearia" tipoUnidade="Kg" />
+				<Produto nome="Bananas" quantidade="4" categoria="Fruta" tipoUnidade="Kg" />
+				<Produto nome="Martelo" quantidade="1" categoria="Ferragens" tipoUnidade="Unity" />
+				<Produto nome="Esfregona" quantidade="2" categoria="Limpeza" tipoUnidade="Unity" />
+				<Produto nome="Shampoo Carro" quantidade="2" categoria="Automóveis" tipoUnidade="L" />
+			</Produtos>
+		</Lista>
+	</Listas> 
+	<Categorias>
+		<Categoria nome="Padaria" />
+		<Categoria nome="Bazar" />
+		<Categoria nome="Ferragens" />
+		<Categoria nome="Mercearia" />
+		<Categoria nome="Frios e Laticínios" />
+		<Categoria nome="Fruta" />
+		<Categoria nome="Limpeza" />
+		<Categoria nome="Bricolage" />
+		<Categoria nome="Automóveis" />
+	</Categorias>
+	<Produtos>
+		<Produto nome="Pão da casa" quantidade="6" categoria="Padaria" tipoUnidade="Kg" />
+		<Produto nome="Alface" quantidade="1" categoria="Mercearia" tipoUnidade="Kg" />
+		<Produto nome="Pera Rocha" quantidade="10" categoria="Fruta" tipoUnidade="Kg" />
+	</Produtos>
+</ListasCompras>

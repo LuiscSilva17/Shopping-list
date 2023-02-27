@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Utad.Lab.G03.MobileDroid.Views.Settings_Page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:controls="clr-namespace:Utad.Lab.G03.MobileDroid.Controls"
+    xmlns:effectView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+    xmlns:viewModel="clr-namespace:Utad.Lab.G03.MobileDroid.ViewModels"
+    x:Name="settingPage"
+    BackgroundColor="{DynamicResource Gray-100}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout Spacing="0">
+                <!--  Title View  -->
+                <controls:TitleView Title="Settings" BackgroundColor="{DynamicResource Backgroudgray}">
+                    <controls:TitleView.LeadingView>
+                        <buttons:SfButton
+                            x:Name="backButton"
+                            Command="{TemplateBinding BindingContext.BackButtonCommand}"
+                            CommandParameter="{x:Reference backButton}"
+                            Style="{StaticResource IconButtonStyle}"
+                            Text="{StaticResource Back}" 
+                            Clicked="Btn_Exit_clk"/>
+                    </controls:TitleView.LeadingView>
+                </controls:TitleView>
+                <ContentPresenter />
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.BindingContext>
+        <viewModel:Settings_PageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="{DynamicResource Gray-100}" Spacing="0">
+
+                <!--  Segundo cabeçalho  -->
+                <Label
+                    Margin="16,24,0,16"
+                    FontFamily="Montserrat-SemiBold"
+                    FontSize="12"
+                    HorizontalOptions="FillAndExpand"
+                    LineHeight="{OnPlatform Default=-1,
+                                            Android=1.25}"
+                    Text="ACCOUNT"
+                    TextColor="{DynamicResource Gray-800}"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
+                <!--  Editar conta  -->
+                <controls:TapAnimationGrid
+                    x:Name="Xconta"
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    ColumnDefinitions="Auto, *, Auto"
+                    ColumnSpacing="0"
+                    Command="{Binding EditProfileCommand}"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <controls:TapAnimationGrid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Btn_Edit_clk"/>
+                    </controls:TapAnimationGrid.GestureRecognizers>
+                    
+                    
+
+                    
+                    <!--  Edit profile label  -->
+                    <Label
+                        Grid.Column="1"
+                        Margin="16,12"
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Edit Profile"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Btn_Edit_clk"/>
+                        </Label.GestureRecognizers> 
+                     </Label>
+                     
+                            
+                    <!--  icon -->
+                    <buttons:SfButton
+                                Margin="6,8"
+                                Grid.Column="2"                                                              
+                                CornerRadius="4"                               
+                                HorizontalOptions="End"
+                                Style="{StaticResource IconButtonStyle}"
+                                Text="{StaticResource Next}" 
+                                Clicked="Btn_Edit_clk"/>
+                </controls:TapAnimationGrid>
+                <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
+
+                <!-- editar Products -->
+                <controls:TapAnimationGrid
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    ColumnDefinitions="Auto, *, Auto"
+                    ColumnSpacing="0"
+                    Command="{Binding LinkAccountCommand}"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <controls:TapAnimationGrid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Btn_Lists_Products"/>
+                    </controls:TapAnimationGrid.GestureRecognizers>
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="16,12"
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Products"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Btn_Lists_Products"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    
+                    <!-- icon -->
+                    <Label
+                        Grid.Column="2"
+                        Margin="16,8"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource Next}" />
+                    <buttons:SfButton
+                                Margin="6,8"
+                                Grid.Column="2"                                                              
+                                CornerRadius="4"                               
+                                HorizontalOptions="End"
+                                Style="{StaticResource IconButtonStyle}"
+                                Text="{StaticResource Next}" 
+                                Clicked="Btn_Lists_Products"/>
+                </controls:TapAnimationGrid>
+
+                <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
+
+                <!-- editar  Categorias -->
+                <controls:TapAnimationGrid
+                    BackgroundColor="{DynamicResource Gray-Bg}"
+                    ColumnDefinitions="Auto, *, Auto"
+                    ColumnSpacing="0"
+                    Command="{Binding LinkAccountCommand}"
+                    RowSpacing="0"
+                    Tapped="False">
+                    <controls:TapAnimationGrid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Btn_Lists_Category"/>
+                    </controls:TapAnimationGrid.GestureRecognizers>
+
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="16,12"
+                        FontFamily="Montserrat-Medium"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Categories"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Btn_Lists_Category"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    
+                    <!--  icon -->
+                    <Label
+                        Grid.Column="2"
+                        Margin="16,8"
+                        Style="{StaticResource IconLabelStyle}"
+                        Text="{StaticResource Next}" />
+                    <buttons:SfButton
+                                Margin="6,8"
+                                Grid.Column="2"                                                              
+                                CornerRadius="4"                               
+                                HorizontalOptions="End"
+                                Style="{StaticResource IconButtonStyle}"
+                                Text="{StaticResource Next}" 
+                                Clicked="Btn_Lists_Category"/>
+                </controls:TapAnimationGrid>
+
+                <BoxView Style="{StaticResource HorizontalSeparatorStyle}" />
+
+
+
+
+
+
+
+                <!--  Logout button  -->
+                <buttons:SfButton
+                    Margin="0,24,0,32"
+                    Command="{Binding LogoutCommand}"
+                    Style="{StaticResource ButtonStyle2}"
+                    Text="LOG OUT"
+                    WidthRequest="245" 
+                    Clicked="Btn_Logout_clk"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

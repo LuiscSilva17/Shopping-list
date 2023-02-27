@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Utad.Lab.G03.MobileDroid.Views.Edit_Product"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:Utad.Lab.G03.MobileDroid.Controls"
+    xmlns:behaviours="clr-namespace:Utad.Lab.G03.MobileDroid.Behaviors"
+    xmlns:converter="clr-namespace:Utad.Lab.G03.MobileDroid.Converters"
+    xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+    xmlns:ViewModel="clr-namespace:Utad.Lab.G03.MobileDroid.ViewModels" 
+    xmlns:behaviour="clr-namespace:Utad.Lab.G03.MobileDroid.Behaviors"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+     xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    BackgroundColor="{DynamicResource Gray-Bg}"
+    NavigationPage.HasNavigationBar="False"
+    x:Name="AddProfile">
+
+    <ContentPage.BindingContext>
+        <ViewModel:Edit_ProductViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:NameValidationConverter x:Key="FirstValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout x:Name="titleLayout" Spacing="0" >
+                <control:TitleView Title="Edit Product" BackgroundColor="{DynamicResource Backgroudgray}">
+                    <control:TitleView.LeadingView>
+                        <!--  Back button command  -->
+                        <buttons:SfButton x:Name="backButton" Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference AddProfile}}" 
+                                          Text="{StaticResource Back}" CommandParameter="{x:Reference backButton}" 
+                                          Style="{StaticResource IconButtonStyle}" 
+                                          Clicked="Btn_Back"/>
+
+                    </control:TitleView.LeadingView>
+                    <control:TitleView.TrailingView>
+                        <!--  Delete button command  -->
+                        <buttons:SfButton x:Name="deleteButton" Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference AddProfile}}" 
+                                          Text="{StaticResource Delete}" CommandParameter="{x:Reference deleteButton}" 
+                                          Style="{StaticResource IconButtonStyle}" Clicked="Btn_Delete"/>
+
+                    </control:TitleView.TrailingView>
+                </control:TitleView>
+                <ContentPresenter />
+            </StackLayout>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="16" Spacing="16">
+                
+                <StackLayout>
+                <!--  Editar Nome  -->
+                    <border:SfBorder 
+                               Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start" 
+                               BorderColor="{StaticResource Gray-900}" CornerRadius="20">
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <Entry  
+                               x:Name="newProdEntry"
+                               Placeholder="Product Name"
+                               Text=""/>
+                        </Grid>
+                    </border:SfBorder>
+                </StackLayout>
+                <StackLayout>
+                    <!--  Editar Quantidade  -->
+                    <border:SfBorder 
+                               Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start" 
+                               BorderColor="{StaticResource Gray-900}" CornerRadius="20">
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <Entry  
+                               x:Name="newQuantEntry"
+                               Placeholder="Quantity"
+                               Text=""/>
+                        </Grid>
+                    </border:SfBorder>
+                </StackLayout>
+                <StackLayout>
+                <!-- Editar categoria -->
+                    <border:SfBorder 
+                               Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start" 
+                               BorderColor="{StaticResource Gray-900}" CornerRadius="20">
+                        <Grid ColumnDefinitions="*, Auto">
+
+                            <Entry  
+                               x:Name="newCatEntry"
+                               Placeholder="Category"
+                               Text=""/>
+                        </Grid>
+                    </border:SfBorder>
+                </StackLayout>
+                
+                <StackLayout>
+                    <!-- Tipo de unidade -->
+                <border:SfBorder 
+                               Padding="12,8" Margin="0,0,0,0" VerticalOptions="Start" 
+                               BorderColor="{StaticResource Gray-900}" CornerRadius="20">
+                    <Grid ColumnDefinitions="*, Auto">
+
+                        <Entry  
+                               x:Name="newTypeEntry"
+                               Placeholder="Type of Product ex:Kg"
+                               Text=""/>
+                    </Grid>
+                </border:SfBorder>
+            </StackLayout>
+
+
+
+            <buttons:SfButton
+                    Margin="0,16,0,0"
+                    Style="{StaticResource ButtonStyle3}"
+                    Text="EDIT"
+                    WidthRequest="200" 
+                    Command="{Binding AddContactCommand}"
+                    Clicked="Btn_Edit"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

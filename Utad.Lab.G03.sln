@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Domain", "0-Domain", "{E48C85AE-54A6-4C0F-9602-062A156534E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Desktop", "1-Desktop", "{5AA98322-A8A7-42FD-A61F-EAB5DA63C8F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Mobile", "2-Mobile", "{3377A03E-91CB-4EBE-A46E-82DCD46E56B7}"
+	ProjectSection(SolutionItems) = preProject
+		Desenvolvimento.txt = Desenvolvimento.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71A23176-ECD9-4BE6-A3B6-DFE8C8A9070E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utad.Lab.G03.Domain", "Utad.Lab.G03.Domain\Utad.Lab.G03.Domain.csproj", "{70757322-A4E7-43F0-8408-8ABDE763DA3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utad.Lab.G03.DesktopWpf", "Utad.Lab.G03.DesktopWpf\Utad.Lab.G03.DesktopWpf.csproj", "{7DAD411C-1B50-4F7F-B748-3200B21A7808}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utad.Lab.G03.MobileDroid", "Utad.Lab.G03.MobileDroid\Utad.Lab.G03.MobileDroid.csproj", "{C5C7C05B-1105-46D2-BADD-FAC0FFACF3AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utad.Lab.G03.MobileDroid.Android", "Utad.Lab.G03.MobileDroid.Android\Utad.Lab.G03.MobileDroid.Android.csproj", "{D88D8BCF-0BDE-4CAF-A294-75A265C43073}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70757322-A4E7-43F0-8408-8ABDE763DA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70757322-A4E7-43F0-8408-8ABDE763DA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70757322-A4E7-43F0-8408-8ABDE763DA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70757322-A4E7-43F0-8408-8ABDE763DA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DAD411C-1B50-4F7F-B748-3200B21A7808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAD411C-1B50-4F7F-B748-3200B21A7808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAD411C-1B50-4F7F-B748-3200B21A7808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAD411C-1B50-4F7F-B748-3200B21A7808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C7C05B-1105-46D2-BADD-FAC0FFACF3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C7C05B-1105-46D2-BADD-FAC0FFACF3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C7C05B-1105-46D2-BADD-FAC0FFACF3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C7C05B-1105-46D2-BADD-FAC0FFACF3AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70757322-A4E7-43F0-8408-8ABDE763DA3E} = {E48C85AE-54A6-4C0F-9602-062A156534E5}
+		{7DAD411C-1B50-4F7F-B748-3200B21A7808} = {5AA98322-A8A7-42FD-A61F-EAB5DA63C8F7}
+		{C5C7C05B-1105-46D2-BADD-FAC0FFACF3AC} = {3377A03E-91CB-4EBE-A46E-82DCD46E56B7}
+		{D88D8BCF-0BDE-4CAF-A294-75A265C43073} = {3377A03E-91CB-4EBE-A46E-82DCD46E56B7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {807704BC-58C9-4393-8C89-BBB9FC0B8D7E}
+	EndGlobalSection
+EndGlobal

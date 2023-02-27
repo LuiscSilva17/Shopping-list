@@ -1,0 +1,259 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Ficheiro de desenvolvimento.cs" />
+    <Compile Remove="Ficheiro de desenvolvimento.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Ficheiro de desenvolvimento.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\bookmark.json" />
+    <None Remove="Data\navigation.json" />
+    <None Remove="Data\profile.json" />
+    <None Remove="ListFile.xml" />
+    <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Resources\Fonts\Montserrat-Medium.ttf" />
+    <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\UIFontIcons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\bookmark.json" />
+    <EmbeddedResource Include="Data\navigation.json" />
+    <EmbeddedResource Include="Data\profile.json" />
+    <Content Include="ListFile.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-SemiBold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\UIFontIcons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.Core" Version="2.46.3" />
+    <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="20.1.0.47" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.1.0.47" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+<PackageReference Include="Syncfusion.Xamarin.SfTreeView" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfTreeMap" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfSunburstChart" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfSparkline" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfSignaturePad" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfRichTextEditor" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfRating" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfChart" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfParallaxView" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfMaps" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfKanban" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfImageEditor" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Expander" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfDiagram" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfChat" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfChart" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Cards" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Cards" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfBarcode" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="20.1.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Expander" Version="20.1.0.47" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Styles\AvatarViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\BorderStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\BoxViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\ButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\CheckBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\ComboBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\EditorStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\EntryStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\FontIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\FrameStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\GradientViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\LabelStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\ListViewStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\RadioButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\RatingStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\SegmentedControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Styles\TextInputLayoutStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Themes\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Account\Change_Profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Product\Add_ProductInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Category\Category_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Category\Create_Category.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Category\Edit_Category.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Lists\Edit_lists.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Product\Create_Product.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Lists\Create_List.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Account\Edit_Profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Account\ForgotPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Lists\Lists.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Account\Login_Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Account\CrProfile_Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Product\Product.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Product\List_Product.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Product\Edit_Product.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Settings\Settings_Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Account\SignUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SimpleEmailEntry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utad\Lab\Syncfusion\" />
+    <Folder Include="Views\Templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Utad.Lab.G03.Domain\Utad.Lab.G03.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Account\Change_Profile.xaml.cs">
+      <DependentUpon>Change_Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Account\CrProfile_Page.xaml.cs">
+      <DependentUpon>CrProfile_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Product\Edit_Product.xaml.cs">
+      <DependentUpon>Edit_Product.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

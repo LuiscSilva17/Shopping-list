@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ListasCompras>
+  <Listas>
+    <Lista nome="NovaLista" id="0">
+      <Produtos>
+        <Produto nome="Prod1" quantidade="2" categoria="Padaria" tipoUnidade="Unity" />
+      </Produtos>
+    </Lista>
+  </Listas>
+  <Categorias>
+    <Categoria nome="Padaria" />
+    <Categoria nome="Bazar" />
+    <Categoria nome="Ferragens" />
+    <Categoria nome="Mercearia" />
+    <Categoria nome="Frios e Laticínios" />
+    <Categoria nome="Bricolage" />
+    <Categoria nome="Automóveis" />
+  </Categorias>
+</ListasCompras>
